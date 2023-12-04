@@ -64,52 +64,43 @@ document.addEventListener('DOMContentLoaded', function() {
         allowParentLinks: true
     });
 
-    /*------------------
-        Hero Slider
-    --------------------*/
-    $('.hero-slider').owlCarousel({
-        loop: true,
-        margin: 0,
-        items: 1,
-        dots: true,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-        mouseDrag: false
-    });
 
-    /*------------------------
-		Testimonial Slider
-    ----------------------- */
-    $('.testimonial-slider').owlCarousel({
-        items: 1,
-        dots: false,
-        autoplay: true,
-        loop: true,
-        smartSpeed: 1200,
-        nav: true,
-        navText: ["<i class='arrow_left'></i>", "<i class='arrow_right'></i>"]
-    });
+  
+});
 
-    /*------------------
-        Magnific Popup
-    --------------------*/
-    $('.video-popup').magnificPopup({
-        type: 'iframe'
-    });
+document.addEventListener('click', function(e){
+    if(e.target.classList.contains("ap-service-item")){
+        const src = e.target.getAttribute("data-setbg");
+        document.querySelector(".modal-img").src=src;
+        const myModal = new bootstrap.Modal(document.getElementById('gallery-modal'));
+        myModal.show();
+    }
 
-    /*------------------
-		Date Picker
-	--------------------*/
-    $('.date-input').datepicker({
-        minDate: 0,
-        dateFormat: 'dd MM, yy'
-    });
+})
 
-    /*------------------
-		Nice Select
-	--------------------*/
-    $('select').niceSelect();
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Ngăn chặn việc submit form mặc định
+
+        const ten = document.getElementById("ten").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const sdt = document.getElementById("sdt").value.trim();
+
+        // Kiểm tra nếu Họ tên, email và số điện thoại không được nhập
+        if (ten === "" || email === "" || sdt === "") {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return;
+        }
+
+        // Kiểm tra số điện thoại chỉ chứa ký tự số và không chứa các ký tự khác
+        if (!/^\d+$/.test(sdt)) {
+            alert("Số điện thoại không hợp lệ");
+            return;
+        }
+
+        // Nếu thông tin hợp lệ, tiến hành submit form
+        this.submit();
+    });
 });

@@ -12,7 +12,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./fonts/fontawesome-free-6.4.2-web/css/all.min.css">
-    <script src="./js/main.js"></script>
+   
 </head>
 
 <body>
@@ -91,55 +91,36 @@
 
     <section class="pay-section">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-4  table">
+            <h2>Thanh Toán</h2>
+            <div class="row pay-section-main">
+                <div class="col-xl-6  table">
                     <div class="rom-detail">
-                        <h4>Chi tiết đặt phòng của bạn</h4>
+                        <h4 style="    text-align: center;; padding-bottom: 5px; font-weight: 600; color:black;">Chi Tiết Đặt Phòng</h4>
                         <div class="row">
+                            <img src="./img/room/room-1.jpg" alt="">
                             <div class="col">
                                 <span>Nhận phòng</span>
-                                <p class="date-" style=" border-right: 1px solid #707079;">T5, 16 tháng 11 năm 2023</p>
+                                <p class="font-black" style=" border-right: 1px solid #707079; padding-left: 3px;">T5, 16 tháng 11 năm 2023</p>
                                 <p>14:00 - 23:00</p>
                             </div>
     
                             <div class="col">
                                 <span>Trả phòng</span>
-                                <p class="date-">T5, 16 tháng 11 năm 2023</p>
+                                <p class="font-black">T5, 16 tháng 11 năm 2023</p>
                                 <p>14:00 - 23:00</p>
                             </div>
                         </div>
                         <p>Tổng thời gian lưu trú:</p>
-                        <p style="margin-bottom: 10px;
+                        <p class="font-black" style="padding-bottom: 10px;
                     border-bottom: 1px solid #707079;">1 đêm</p>
-                        <p style="margin-top: 20px">Bạn đã chọn</p>
-                        <p>2 phòng cho 2 người lớn</p>
+                        <p style="padding-top: 30px;">Bạn đã chọn:</p>
+                        <p class="font-black" style="padding-bottom: 10px;">2 phòng cho 2 người lớn</p>
                         <a href="">Đổi sự lựa chọn cho bạn</a>
                         
                     </div>
                 </div>
-                <div class="col-xl-4  table">
-                    <div class="pay-sumary">
-                        <h4>Tóm tắt giá</h4>
-                        <div class="row">
-                            <div class="col">
-                                <h5>Tổng cộng</h5>
-                                <h5 class="date-" style=" border-right: 1px solid #707079;">VND 1.170.000</h5>
-                                <p>Đã bao gồm thuế và phí</p>
-                            </div>
-                        </div>
-                        <p>Thông tin giá</p>
-                        <p>Bao gồm VND 106.364 phí và thuế </p>
-                        
-                        <a href="">Ẩn chi tiết</a>
-                    </div>
-
-                    </div>
-                <div class="col-xl-4 pay-sumary">
+                <div class="col-xl-6 pay-sumary">
                     <form action="/submit" method="post">
-                        <div class="row">
-                            <label for="ho">Họ</label>
-                            <input type="text" id="ho" name="ho">
-                        </div>
                         <div class="row">
                             <label for="ten">Tên</label>
                             <input type="text" id="ten" name="ten">
@@ -149,15 +130,6 @@
                             <input type="email" id="email" name="email">
                         </div>
                         <div class="row">
-                            <label for="quocgia">Quốc gia</label>
-                            <select id="quocgia" name="quocgia">
-                                <option value="Việt Nam">Việt Nam</option>
-                                <option value="Mỹ">Mỹ</option>
-                                <option value="Anh">Anh</option>
-                                <option value="Pháp">Pháp</option>
-                            </select>
-                        </div>
-                        <div class="row">
                             <label for="sdt">Số điện thoại</label>
                             <input type="text" id="sdt" name="sdt">
                         </div>
@@ -165,7 +137,9 @@
                             <label for="yeucau">Yêu cầu</label>
                             <textarea id="yeucau" name="yeucau"></textarea>
                         </div>
-                        <input type="submit" value="Gửi">
+                        <div class="row">
+                            <input class="submit-pay" type="submit" value="Đặt Phòng Ngay">
+                        </div>
                     </form>
                 </div>
                 
@@ -239,6 +213,7 @@
             </div>
         </div>
     </footer>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
